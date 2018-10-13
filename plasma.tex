@@ -20,16 +20,59 @@
 \begin{frame}[t]
 	\frametitle{Цели работы}
 	% \textbf{Цели}\\
-	
 		\vfill
-
 		\begin{enumerate}
 			\item Изучить принцип работы зонда с СВЧ-резонатором
-			\item Измерить плотность и концентрацию плазмы в экспериментальном стенде "КРОТ"
+
+			\item Измерить локальную концентрацию плазмы на экспериментальной установке "КРОТ"
+
+			\item Изучить временную зависимость концентрации для распадающейся плазмы  
+
 		\end{enumerate}
 		\vfill
+\end{frame}
+\subsection{Актуальность работы}
+\begin{frame}[t]
+	
+	\frametitle{Актуальность работы}
+		
+		\begin{enumerate}
+			\item Моделирование космических явлений
+			\item Моделирование процессов в ионосфере
+			\item Идея управляемого термоядерного синтеза
+			\item МГД-преобразование энергии и ионные двигатели
+			\item Газовые лазеры
+			\item Газоразрядные электронные приборы 
+		\end{enumerate}
+
 
 \end{frame}
+
+\section{Краткая теория}
+\subsection{Некоторые свойства плазмы}
+\begin{frame}
+	\frametitle{Некоторые свойства плазмы}
+	\textbf{Плазма} -- частично или полностью ионизированный газ, образованный из нейтральных атомов (или молекул) и заряженных частиц.
+
+	$\,$
+	\begin{enumerate}
+		\item Квазинейтральный газ
+		\item Экранирует действующие на неё на неё электрические поля
+		\item Высокая проводимость
+		\item 
+	\end{enumerate}
+	Плазма является электрически нейтральной системой.
+	% Особенность плазмы в том, что она экранирует действующие на неё электрические поля. 
+\end{frame}
+
+\subsection{Генерация плазмы}
+\begin{frame}
+	\frametitle{Генерация плазмы в КРОТе}
+\end{frame}
+
+
+
+% subsection  (end)
 % \section{Теоретическая часть} % (fold)
 % \label{sec:теоретическая_часть}
 
@@ -48,34 +91,120 @@
 
 \begin{frame}
 	\frametitle{Зонд с СВЧ-резонатором}
-	\begin{equation}
-		\omega_{res}=\left(\frac\pi{2l}\right)\frac c{\sqrt{\varepsilon}}
-	\end{equation}
-	В плазме: $\omega_{res}^2=\omega_{0res}^2+\omega_p^2$, 
-	где $\omega_{0res}=\frac{\pi c}{2l}$
+	Идея метода замера локальной  плотности плазмы заключается в измерении собственной частоты резонатора, помещенного в неё.
 
-	Концентрация плазмы
 	\begin{equation}
-		N=\frac{m\omega^2_p}{4\pi e^2}
+		\omega_{res}=\left(\frac\pi{2l}\right)\frac c{\sqrt{\varepsilon}},
 	\end{equation}
+	где $\omega_{res}$-- собственная частота резонатора.
+
+	В плазме: $$\varepsilon=\varepsilon(\omega)=1-\frac{\omega^2}{\omega_p^2}.$$ 
+	Тогда сдвиг резонансной частоты по сравнению с вакуумом:
+	$$\omega_{res}^2=\omega_{0res}^2+\omega_p^2,$$ 
+	где $\omega_{0res}$-- собственная частота резонатора в вакууме,а $\omega_p$-- плазменная частота
+
+	При этом концентрация однозначно связана с плазменной частотой:
+	\begin{equation}
+		N_e=\frac{m_e\omega^2_p}{4\pi e^2}
+	\end{equation}
+	% Таким образом мы сможем найти концентрацию.
 \end{frame}
-% \section{Практическая часть} % (fold)
-% \label{sec:практическая_часть}
 
-% \label{sub:концентрация_плазмы}
+\begin{frame}
+	\frametitle{Зонд с СВЧ-резонатором}
+	В нашем случае резонатором является четвертьволновый отрезок двупроводной линии (четвертьволновый резонатор), замкнутый на одном конце и разомкнутый на другом. 
+	\begin{figure}[H]
+	\begin{minipage}{0.49\linewidth}
+			\centering
+			\includegraphics[width=\linewidth]{fig/resonator}
+			\caption{Четвертьволновый резонатор}
+			\label{fig:resonator}
+	\end{minipage}
+	\begin{minipage}{0.49\linewidth}		
+			\centering
+			\includegraphics[]{chem/chem1}
+			\caption{Эквивалентная съема резонатора}
+			\label{fig:chem1}
+	\end{minipage}
+	\end{figure}
+\end{frame}
 
-% \subsection{Плотность плазмы} % (fold)
-% \label{sub:плотность_плазмы}
+\begin{frame}
+	\frametitle{Преимущества зонда с СВЧ-резонатором}
+	\begin{enumerate}
+		\item Благодаря малым размерам резонатора, позволяет определять локальное, слабо возмущенное значение концентрации плазмы.
+		\item Результаты измерений не зависят от температуры плазмы.
+	\end{enumerate}
+\end{frame}
+\section{Эксперимент}
+\subsection{Описание экспериментальной установки}
+\begin{frame}
+	\frametitle{Экспериментальная установка КРОТ}
+	Размеры камеры: диаметр 3 м, длина 10 м.
 
-% % subsection плотность_плазмы (end)
+	Размеры соленоида: длина 3.5 м, диаметр 2 м. 
+	
+	Магнитное поле достигает величины $B\approx 1000$ Эрстед. 
+	
+	Предельный вакуум, достигаемый в объеме камеры $P =3\cdot10^{-6}$ Торр. 
+	\begin{figure}[tb]
+		\vspace{0pt}
+		\centering
+		\includegraphics[width=0.6\linewidth]{fig/krot}
+		\label{fig:krot}
+		\caption{1 - вакуумная откачка, 2 - зонд с СВЧ-резонатором,3 - ВЧ-генератор, 4 - соленоид с источником магнитного поля.}
+	\end{figure}
+\end{frame}
+\section{Практическая часть} % (fold)
+\subsection{Измерение концентрации плазмы}
+\begin{frame}
+	\frametitle{Измерение концентрации плазмы}
+	Рабочий газ -- аргон (Ag), 
+	$P=4\cdot10^{-1}$ Торр. 
+	\begin{figure}[tb]
+		\vspace{-5pt}
+		\centering
+		\includegraphics[width=0.89\linewidth]{fig/concentration}
+		\label{fig:1}
+	\end{figure}
+\end{frame}
+\subsection{Распад  плазмы}
+\begin{frame}
+	\frametitle{Распад плазмы}
+	\begin{figure}[tb]
+		\centering
+		\includegraphics[width=0.9\linewidth]{fig/decay}
+		\label{fig:2}
+	\end{figure}
+\end{frame}
 
-% % subsection концентрация_плазмы (end)
-% % section практическая_часть (end)
-% % subsection зонд_с_свч_резонатором (end)
-% % subsection генерация_плазмы (end)
-% % subsection понятие_плазмы (end)
+\subsection{Зависимость на радиальной оси}
+\begin{frame}
+	\frametitle{Зависимость на радиальной оси}
+	Время после отключения ВЧ-генератора $t=4.13$ мс
+	\begin{figure}[tb]
+		\centering
+		\includegraphics[width=0.9\linewidth]{fig/radial}
+		\label{fig:2}
+	\end{figure}
+\end{frame}
 
-% % section теоретическая_часть (end)
+\subsection{Выводы}
+\begin{frame}
+		\vfill
+		\frametitle{Выводы}
+		\begin{enumerate}
+			\item Мы изучили принцип работы зонда с СВЧ-резонатором
+
+			\item Измерили локальную концентрацию плазмы на экспериментальной установке "КРОТ"
+
+			\item Изучили временную зависимость концентрации для распадающейся плазмы  
+
+		\end{enumerate}
+		\vfill
+\end{frame}
+
+
 
 
 \end{document}
