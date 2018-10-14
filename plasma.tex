@@ -1,6 +1,7 @@
 \documentclass[10pt,pdf,hyperref={unicode}, dvipsnames]{beamer}
 \input{text/pre.tex}
-
+\renewcommand{\phi}{\varphi}
+\renewcommand{\epsilon}{\varepsilon}
 \title[Измерение плотности плазмы]{Измерение плотности плазмы}
 
 \author{%
@@ -14,7 +15,12 @@
 \date{Нижний Новгород, 2018}
 
 \begin{document}  
-
+\begin{frame}
+\titlepage
+\end{frame}
+\begin{frame}
+\tableofcontents
+\end{frame}
 \section{Введение}
 \subsection{Цели работы}
 \begin{frame}[t]
@@ -62,30 +68,65 @@
 		\item 
 	\end{enumerate}
 	Плазма является электрически нейтральной системой.
-	% Особенность плазмы в том, что она экранирует действующие на неё электрические поля. 
 \end{frame}
 
-\subsection{Генерация плазмы}
-\begin{frame}
-	\frametitle{Генерация плазмы в КРОТе}
+\begin{frame}[t]\frametitle{Радиус Дебая}
+\begin{equation}
+	\Delta\phi= -4\pi\rho,
+\end{equation}
+$\Delta$-- оператор Лапласа
+Распределение электронов,
+а значит, и их пространственного заряда
+$\rho_e$ описывается формулой Больцмана:
+\begin{equation}
+	\rho_e= -ne\cdot e^{e\phi/kT_e}.
+\end{equation}
+\begin{equation}
+	\label{eq:1}
+	\dv[2]{\phi}{t}+\frac2r\dv{\phi}{r}=-4\pi Ne\left[1 -e^{e\phi/kT_e}\right]
+\end{equation}
+При $\displaystyle \frac{e\phi}{kT_e}\ll1$ можем разложить экспоненту в ряд и (\ref{eq:1}) станет линейным:
+\begin{equation}
+	\label{eq:2}
+	\dv[2]{\phi}{t}+\frac2r\dv{\phi}{r}=\frac{1}{r_D^2}\phi,
+\end{equation}
+где $\displaystyle r_D^2=\frac{kT_e}{4\pi Ne^2}$.
+
+Тогда, решение (\ref{eq:2}) имеет вид $\displaystyle \phi=\frac{A_0}{r}\cdot e^{-r/r_D}$
+\end{frame}
+\begin{frame}[t]\frametitle{Радиус Дебая (продолжение)}
+	Тогда, решение (\ref{eq:2}) имеет вид 
+	\begin{equation}
+		\label{eq:3}
+		\phi=\frac{A_0}{r}\cdot e^{-r/r_D}
+	\end{equation}  
+    Решение уравнения (\ref{eq:3}) показывает, что поле иона убывает с расстоянием экспоненциально с характерной длиной, равной $r_D$ -- дебаевскому радиусу экранирования. 
+
+    $$\,$$
+
+    Плазму можно считать нейтральной (квазинейтральной) в областях, размеры которых существенно превосходят дебаевскую длину.
+\end{frame}
+\begin{frame}[t]\frametitle{Плазменная частота}
+\begin{equation}
+	\sigma = Nex
+\end{equation}
+\begin{equation}
+	E=4\pi\sigma=4\pi Nex
+\end{equation}
+Это полей действует на электроны, придавая им ускорение, равное
+\begin{equation}
+	\label{eq:4}
+	\dv[2]{x}{t}=-\frac{eE}{m}=-\frac{4\pi N e^2}{m}x
+\end{equation}
+Уравнение (\ref{eq:4}) определяет плазменную частоты коллективных колебаний электронов:
+\begin{equation}
+	\omega_p=\sqrt{\frac{4\pi N e^2}{m}}
+\end{equation}
+
+
+
 \end{frame}
 
-
-
-% subsection  (end)
-% \section{Теоретическая часть} % (fold)
-% \label{sec:теоретическая_часть}
-
-% \subsection{Понятие плазмы} % (fold)
-% \label{sub:понятие_плазмы}
-% % \begin{frame}
-		
-% % \end{frame}
-% \subsection{Источник плазмы} % (fold)
-% \label{sub:генерация_плазмы}
-% % \begin{frame}
-	
-% % \end{frame}
 
 \subsection{Зонд с СВЧ-резонатором} % (fold)
 
@@ -105,10 +146,11 @@
 
 	При этом концентрация однозначно связана с плазменной частотой:
 	\begin{equation}
-		N_e=\frac{m_e\omega^2_p}{4\pi e^2}
+		N=\frac{m_e\omega^2_p}{4\pi e^2}
 	\end{equation}
 	% Таким образом мы сможем найти концентрацию.
 \end{frame}
+
 
 \begin{frame}
 	\frametitle{Зонд с СВЧ-резонатором}
@@ -129,17 +171,27 @@
 	\end{figure}
 \end{frame}
 
+% \begin{frame}
+% 	\frametitle{Преимущества зонда с СВЧ-резонатором}
+% 	\begin{enumerate}
+% 		\item Благодаря малым размерам резонатора, позволяет определять локальное, слабо возмущенное значение концентрации плазмы.
+% 		\item Результаты измерений не зависят от температуры плазмы.
+% 	\end{enumerate}
+% \end{frame}
+\begin{frame}[t]\frametitle{Нелинейные свойства СВЧ-резонатора}
+    
+
+
+\end{frame}
+\subsection{Генерация плазмы}
 \begin{frame}
-	\frametitle{Преимущества зонда с СВЧ-резонатором}
-	\begin{enumerate}
-		\item Благодаря малым размерам резонатора, позволяет определять локальное, слабо возмущенное значение концентрации плазмы.
-		\item Результаты измерений не зависят от температуры плазмы.
-	\end{enumerate}
+	\frametitle{Генерация плазмы в КРОТе}
 \end{frame}
 \section{Эксперимент}
 \subsection{Описание экспериментальной установки}
 \begin{frame}
 	\frametitle{Экспериментальная установка КРОТ}
+	% \begin{block}{Параметры КРОТа}
 	Размеры камеры: диаметр 3 м, длина 10 м.
 
 	Размеры соленоида: длина 3.5 м, диаметр 2 м. 
@@ -147,6 +199,7 @@
 	Магнитное поле достигает величины $B\approx 1000$ Эрстед. 
 	
 	Предельный вакуум, достигаемый в объеме камеры $P =3\cdot10^{-6}$ Торр. 
+	% \end{block}
 	\begin{figure}[tb]
 		\vspace{0pt}
 		\centering

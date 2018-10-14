@@ -65,7 +65,6 @@ plt.plot(x, N(x), 'c')
 plt.plot(omegap, N(omegap), 'ro')
 plt.xlabel(r'$\omega_p,\text{рад}/\text{с}$', fontsize='16')
 plt.ylabel(r'N, $1/\text{см}^{3}$', fontsize='16')
-
 plt.minorticks_on()
 plt.grid(which='major', linestyle='-')
 plt.grid(which='minor', linestyle=':')
