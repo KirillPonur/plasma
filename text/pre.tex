@@ -4,6 +4,15 @@
 \usepackage{tikz}
 \usepackage[unicode]{hyperref}
 \usepackage{pgfplots,standalone}
+\usepackage
+	{
+		% Дополнения Американского математического общества (AMS)
+		amssymb,
+		amsfonts,
+		amsmath,
+		amsthm,
+		physics
+		}
 % \usepackage{lmodern}
 \pgfplotsset{compat=newest} 
 \usetikzlibrary{%
@@ -18,8 +27,15 @@
     positioning%
 }
 
+
 % Стиль презентации
-\usetheme{Warsaw}
+
+ \usetheme{Warsaw}
+ \usefonttheme{professionalfonts}
+ \usecolortheme{}
+ % \usecolortheme{whale}
+
+ 
 
 % \setbeamercolor{frametitle right}{fg=white,bg=Brown!85}
 % \setbeamercolor{frametitle}{fg=white,bg=Brown!85}
@@ -47,6 +63,7 @@
 	\raisebox{1pt}{\colorbox{bg}{\color{fg}\footnotesize\bf\insertenumlabel}}%
 }
 \setbeamercolor{item projected}{bg=black,fg=white}
+
 
 \setbeamertemplate{itemize item}{%
 	\usebeamercolor[bg]{item projected}%
