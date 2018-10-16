@@ -49,6 +49,18 @@ omegap = (omegares**2 - omega0res**2)**(1 / 2)
 
 
 # plt.subplot(211)
+print(t, N(omegap))
+
+
+def f(x):
+    a = 5*4.491 * 10**(11)
+    b = -0.9277
+    f = a * np.exp(b * x)
+    return f
+
+
+x = np.linspace(t[-1], t[0], 100)
+# plt.plot(x, f(x), 'c')
 plt.plot(t, N(omegap), 'or')
 plt.xlabel(r't, $\text{c}$', fontsize='16')
 plt.ylabel(r'N, $1/\text{см}^{3}$', fontsize='16')
@@ -59,9 +71,10 @@ plt.savefig('D:/Labs/plasma/fig/decay.pdf')
 plt.show()
 
 
-# # plt.subplot(212)
+# # # plt.subplot(212)
 x = np.linspace(omegap[0], omegap[-1], 100)
 plt.plot(x, N(x), 'c')
+
 plt.plot(omegap, N(omegap), 'ro')
 plt.xlabel(r'$\omega_p,\text{рад}/\text{с}$', fontsize='16')
 plt.ylabel(r'N, $1/\text{см}^{3}$', fontsize='16')

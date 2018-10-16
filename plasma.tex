@@ -70,32 +70,32 @@
 	Плазма является электрически нейтральной системой.
 \end{frame}
 
-\subsection{Генерация плазмы}
-\begin{frame}
-	\frametitle{Генерация плазмы в КРОТе}
-	Для генерации плазмы используется индукционный газовый разряд, осуществляемый при помощи высокочастотных вихревых электрических
-	полей, создаваемых мощными катушками индуктивности, расположенными внутри установки.
-	\begin{figure}[H]
-		\begin{minipage}{\linewidth}
-				\centering
-				\includegraphics[width=0.4\linewidth]{fig/induct}
-				\caption{Генерация ВЧ поля}
-				\label{fig:resonator}
-		\end{minipage}
-		\end{figure}
-
 \begin{frame}[t]\frametitle{Радиус Дебая}
+	\begin{figure}[tb]
+		\vspace{0pt}
+		\centering
+		\includegraphics[width=0.6\linewidth]{fig/debai}
+		\label{fig:debai}
+		\caption{}
+	\end{figure}
 \begin{equation}
 	\Delta\phi= -4\pi\rho,
 \end{equation}
 $\Delta$-- оператор Лапласа
+
 Распределение электронов,
 а значит, и их пространственного заряда
+
 $\rho_e$ описывается формулой Больцмана:
 \begin{equation}
 	\rho_e= -ne\cdot e^{e\phi/kT_e}.
 \end{equation}
-\begin{equation}
+
+
+% Тогда, решение (\ref{eq:2}) имеет вид $\displaystyle \phi=\frac{A_0}{r}\cdot e^{-r/r_D}$
+\end{frame}
+\begin{frame}[t]\frametitle{Радиус Дебая (продолжение)}
+	\begin{equation}
 	\label{eq:1}
 	\dv[2]{\phi}{t}+\frac2r\dv{\phi}{r}=-4\pi Ne\left[1 -e^{e\phi/kT_e}\right]
 \end{equation}
@@ -105,11 +105,6 @@ $\rho_e$ описывается формулой Больцмана:
 	\dv[2]{\phi}{t}+\frac2r\dv{\phi}{r}=\frac{1}{r_D^2}\phi,
 \end{equation}
 где $\displaystyle r_D^2=\frac{kT_e}{4\pi Ne^2}$.
-
-Тогда, решение (\ref{eq:2}) имеет вид $\displaystyle \phi=\frac{A_0}{r}\cdot e^{-r/r_D}$
-
-\end{frame}
-\begin{frame}[t]\frametitle{Радиус Дебая (продолжение)}
 	Тогда, решение (\ref{eq:2}) имеет вид 
 	\begin{equation}
 		\label{eq:3}
@@ -193,14 +188,25 @@ $\rho_e$ описывается формулой Больцмана:
 % 		\item Результаты измерений не зависят от температуры плазмы.
 % 	\end{enumerate}
 % \end{frame}
-\begin{frame}[t]\frametitle{Нелинейные свойства СВЧ-резонатора}
+% \begin{frame}[t]\frametitle{Нелинейные свойства СВЧ-резонатора}
     
 
 
-\end{frame}
+% \end{frame}
 \subsection{Генерация плазмы}
 \begin{frame}
 	\frametitle{Генерация плазмы в КРОТе}
+
+		Для генерации плазмы используется индукционный газовый разряд, осуществляемый при помощи высокочастотных вихревых электрических
+	полей, создаваемых мощными катушками индуктивности, расположенными внутри установки.
+	\begin{figure}[H]
+		\begin{minipage}{\linewidth}
+				\centering
+				\includegraphics[width=0.4\linewidth]{fig/induct}
+				\caption{Генерация ВЧ поля}
+				\label{fig:resonator}
+		\end{minipage}
+		\end{figure}
 \end{frame}
 \section{Эксперимент}
 \subsection{Описание экспериментальной установки}
