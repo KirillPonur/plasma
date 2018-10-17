@@ -62,7 +62,7 @@ def f(x):
 x = np.linspace(t[-1], t[0], 100)
 # plt.plot(x, f(x), 'c')
 plt.plot(t, N(omegap), 'or')
-plt.xlabel(r't, $\text{c}$', fontsize='16')
+plt.xlabel(r't, $\text{мc}$', fontsize='16')
 plt.ylabel(r'N, $1/\text{см}^{3}$', fontsize='16')
 plt.minorticks_on()
 plt.grid(which='major', linestyle='-')
