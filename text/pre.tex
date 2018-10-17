@@ -4,6 +4,7 @@
 \usepackage{tikz}
 \usepackage[unicode]{hyperref}
 \usepackage{pgfplots,standalone}
+\usepackage[normalem]{ulem}
 \usepackage
 	{
 		% Дополнения Американского математического общества (AMS)
@@ -34,7 +35,12 @@
  \usefonttheme{professionalfonts}
  \usecolortheme{}
  % \usecolortheme{whale}
-
+% \let\oldframe\enumerate
+% \renewcommand{\frame}{%
+% \oldframe
+% \let\olditemize\itemize
+% \renewcommand\itemize{\olditemize\addtolength{\itemsep}{100pt}}%
+% }
  
 
 % \setbeamercolor{frametitle right}{fg=white,bg=Brown!85}
