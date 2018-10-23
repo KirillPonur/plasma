@@ -3,7 +3,7 @@
 \renewcommand{\phi}{\varphi}
 \renewcommand{\epsilon}{\varepsilon}
 \renewcommand{\div}{\operatorname{div}}
-\title[Измерение плотности плазмы]{Измерение плотности плазмы}
+\title[Измерение плотности плазмы]{Измерение плотности плазмына  экспериментальном стенде КРОТ зондом с СВЧ-резонатором}
 
 \author{%
 	Виноградов И.Д. %
@@ -19,9 +19,9 @@
 \begin{frame}
 \titlepage
 \end{frame}
-\begin{frame}
-\tableofcontents
-\end{frame}
+% \begin{frame}
+% \tableofcontents
+% \end{frame}
 \section{Введение}
 \subsection{Цели работы}
 \begin{frame}[t]
@@ -41,6 +41,7 @@
 \end{frame}
 \subsection{Актуальность работы}
 \begin{frame}[t]
+
 	
 	\frametitle{Актуальность работы}
 		\vfill
@@ -143,7 +144,7 @@ $\rho_e$ описывается формулой Больцмана:
 \begin{frame}[t]\frametitle{Плазменная частота}
 \begin{minipage}[0.2\textheight]{\textwidth}
 	\begin{columns}[T]
-
+%Без учета магнитного поля
 		\begin{column}{0.4\textwidth}
 			\begin{figure}[tr]
 				\vspace{0pt}
@@ -232,7 +233,7 @@ $\rho_e$ описывается формулой Больцмана:
 	\frametitle{Недостатки зонда с СВЧ-резонатором}
 	\begin{enumerate}
 		\item Контактный метод измерения приводит к возмущению некоторой области около зонда. Характерный размер такой области определяется дебаевским радиусом экранирования и, как правило, оказывается существенно меньше размеров плазменного объема.
-		\item Из-за индуктивной связи между  возбуждающей и приёмной линиями зонда возникают сторонние токи в резонаторе.
+		\item У резонатора есть нелинейный режим. Напишем про него.
 	\end{enumerate}
 \end{frame}
 
@@ -240,7 +241,7 @@ $\rho_e$ описывается формулой Больцмана:
 	\frametitle{Преимущества зонда с СВЧ-резонатором}
 	\begin{enumerate}
 		\item Позволяет определять локальное, слабовозмущенное значение плотности плазмы. 
-		\item В сравнении с ленгмюровскими зондами, результаты измерений с помощью зонда с СВЧ-резонатором не зависят от электронной температуры плазмы. %узнать как ленгмюровскими мерить плотность
+		\item В сравнении с ленгмюровскими зондами, результаты измерений с помощью зонда с СВЧ-резонатором не зависят в допустимых пределах от электронной температуры плазмы. %узнать как ленгмюровскими мерить плотность
 
 	\end{enumerate}
 \end{frame}
@@ -286,21 +287,23 @@ $\rho_e$ описывается формулой Больцмана:
 		\end{figure}
 \end{frame}
 \section{Практическая часть} % (fold)
-\subsection{Измерение концентрации плазмы}
-\begin{frame}
-	\frametitle{Измерение концентрации плазмы}
-	Рабочий газ -- аргон (Ag), 
-	$P=4\cdot10^{-4}$ Торр. 
-	\begin{figure}[tb]
-		\vspace{-5pt}
-		\centering
-		\includegraphics[width=0.89\linewidth]{fig/concentration}
-		\label{fig:1}
-	\end{figure}
-\end{frame}
+% \subsection{Измерение концентрации плазмы}
+% \begin{frame}
+% 	\frametitle{Измерение концентрации плазмы}
+% 	Рабочий газ -- аргон (Ag), 
+% 	$P=4\cdot10^{-4}$ Торр. 
+% 	\begin{figure}[tb]
+% 		\vspace{-5pt}
+% 		\centering
+% 		\includegraphics[width=0.89\linewidth]{fig/concentration}
+% 		\label{fig:1}
+% 	\end{figure}
+% \end{frame}
 \subsection{Распад  плазмы}
 \begin{frame}
 	\frametitle{Распад плазмы}
+	Из графика определили характерное время распада $\tau_N=4.4$ мс.
+
 	\begin{figure}[tb]
 		\centering
 		\includegraphics[width=0.9\linewidth]{fig/decay}
