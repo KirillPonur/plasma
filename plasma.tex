@@ -112,7 +112,7 @@
 	а значит, и их пространственного заряда
 $\rho_e$ описывается формулой Больцмана:
 \begin{equation}
-	\rho_e= Ne\cdot \exp{-e\phi/kT_e}.
+	\rho_e= Ne\cdot \exp{-\frac{e\phi}{kT_e}}.
 \end{equation}
 
 
@@ -121,7 +121,8 @@ $\rho_e$ описывается формулой Больцмана:
 \begin{frame}[t]\frametitle{Радиус Дебая (продолжение)}
 	\begin{equation}
 	\label{eq:1}
-	\dv[2]{\phi}{t}+\frac2r\dv{\phi}{r}=-4\pi Ne\left[1 -\exp{-e\phi/kT_e}\right]
+	\dv[2]{\phi}{t}+\frac2r\dv{\phi}{r}=-4\pi Ne\left[1 -
+	\exp{-\frac{e\phi}{kT_e}}\right]
 \end{equation}
 При $\displaystyle \frac{e\phi}{kT_e}\ll1$ можем разложить экспоненту в ряд и (\ref{eq:1}) станет линейным:
 \begin{equation}
@@ -196,13 +197,63 @@ $\rho_e$ описывается формулой Больцмана:
 	\begin{figure}[H]
 			\centering
 			\includegraphics[width=0.8\linewidth]{fig/resonator}
-			\caption*{Четвертьволновый резонатор\alert{(1-? 2-? 3-?)}}
+			\vspace{-20pt}
+			\caption*{\centeringЧетвертьволновый резонатор
+
+			% \alert
+			{1- двупроводная линия 2- передающая линия 3- принимающая линия}}
+
 			\label{fig:resonator}
 	\end{figure}
 	
 
 \end{frame}
 
+\begin{frame}[t]\frametitle{Существующие методы диагностики плазмы}
+	\begin{columns}[t]
+		\begin{column}{0.5\textwidth}
+			{\centering\textbf{Контактные методы}
+			\begin{enumerate}
+				\item Зонды Ленгмюра
+				\item Рамочные и электрические сбалансированные системы
+				\item Зонд с СВЧ-резонатором
+			\end{enumerate}}
+			\bigbreak
+			\textit{Преимущества:}
+
+			Возможность локальных измерений
+
+			\bigbreak
+			\textit{Недостатки:}
+
+			Вносят возмущения в плазму
+
+		\end{column}
+
+		\begin{column}{0.5\textwidth}
+		 	{\centering \textbf{Бесконтактные методы}
+		 	\begin{enumerate}
+		 		\item Интерферометр
+		 		\item Метод "резонансного конуса"
+		 	\end{enumerate}}
+		 	\bigbreak
+		 	\textit{Преимущества:}
+
+			Измерения не влияют на измеряемые величины
+
+			\bigbreak
+			\textit{Недостатки:}
+
+			Невозможность локальных измерений
+		\end{column}
+
+
+
+	\end{columns}
+	    
+
+
+\end{frame}
 
 \begin{frame}
 	\frametitle{Зонд с СВЧ-резонатором}
@@ -227,12 +278,27 @@ $\rho_e$ описывается формулой Больцмана:
 
 \begin{frame}
 	\frametitle{Зонд с СВЧ-резонатором}
-	\begin{figure}[H]
-			\centering
-			\includegraphics[width=.65\linewidth]{chem/chem1}
-			\caption*{Эквивалентная схема резонатора}
-			\label{fig:chem1}
-	\end{figure}
+	\begin{minipage}[]{0.49\textwidth}
+		\begin{figure}[H]
+				\centering
+				\includegraphics[width=\linewidth]{fig/resonator}
+				\caption*{СВЧ-резонатор}
+				\label{fig:chem1}
+		\end{figure}
+	\end{minipage}
+	\begin{minipage}[]{0.49\textwidth}
+		\begin{figure}[H]
+				\centering
+				\includegraphics[width=\linewidth]{chem/chem1}
+				\caption*{Эквивалентная схема резонатора
+				\newline 1- двупроводная линия 
+				\newline 2- передающая линия 
+				\newline 3- принимающая линия}
+				\label{fig:chem1}
+		\end{figure}
+	\end{minipage}
+
+
 \end{frame}
 
 \begin{frame}
@@ -275,7 +341,7 @@ $\rho_e$ описывается формулой Больцмана:
 		\centering
 		\includegraphics[width=0.6\linewidth]{fig/krot}
 		\label{fig:krot}
-		\caption*{1 - вакуумная откачка, 2 - зонд с СВЧ-резонатором,3 - ВЧ-генератор, 4 - соленоид с источником магнитного поля, 5 - напуск рабочего газа.}
+		\caption*{\centering 1 - вакуумная откачка, 2 - зонд с СВЧ-резонатором,3 - ВЧ-генератор, 4 - соленоид с источником магнитного поля, 5 - напуск рабочего газа.}
 	\end{figure}
 \end{frame}
 \begin{frame}
@@ -283,11 +349,16 @@ $\rho_e$ описывается формулой Больцмана:
 
 		Для генерации плазмы используется индукционный газовый разряд, осуществляемый при помощи высокочастотных вихревых электрических
 	полей, создаваемых катушками индуктивности, расположенными внутри установки.
+
+	Диаметр витков: $R_1=0.4$ м $R_2=1.2$ м
+
 	\begin{figure}[H]
 		\begin{minipage}{\linewidth}
 				\centering
 				\includegraphics[width=0.6\linewidth]{fig/induct}
+				\vspace{-25pt}
 				\caption*{Индукторы для генерации плазмы}
+
 				\label{fig:resonator}
 		\end{minipage}
 		\end{figure}
@@ -336,11 +407,8 @@ $\rho_e$ описывается формулой Больцмана:
 			\item Был изучен принцип работы зонда с СВЧ-резонатором
 			
 
-			\item Была измерена локальная концентрация плазмы в зависимости 
-			от удалённости до её центра генерации
-
-			\item А также, снята временная зависимость концентрации для распадающейся плазмы  
-
+			\item Была измерена зависимость локальной концентрации плазмы от расстояния до центра генерации
+			\item Была изучена временная зависимость концентрации распадающейся плазмы
 		\end{enumerate}
 		\vfill
 \end{frame}
