@@ -2,7 +2,8 @@
 \input{text/pre.tex}
 \renewcommand{\phi}{\varphi}
 \renewcommand{\epsilon}{\varepsilon}
-\title[Измерение плотности плазмы]{Измерение плотности плазмы}
+\renewcommand{\div}{\operatorname{div}}
+\title[Измерение плотности плазмы]{Измерение плотности плазмы на  экспериментальном стенде КРОТ зондом с СВЧ-резонатором}
 
 \author{%
 	Виноградов И.Д. %
@@ -18,9 +19,9 @@
 \begin{frame}
 \titlepage
 \end{frame}
-\begin{frame}
-\tableofcontents
-\end{frame}
+% \begin{frame}
+% \tableofcontents
+% \end{frame}
 \section{Введение}
 \subsection{Цели работы}
 \begin{frame}[t]
@@ -28,27 +29,29 @@
 	% \textbf{Цели}\\
 		\vfill
 		\begin{enumerate}
-			\item Изучить принцип работы зонда с СВЧ-резонатором
+			% \item \sout{Получить зачёт по УНЭ.}
+			\item Изучить принцип работы зонда с СВЧ-резонатором.
 
-			\item Измерить локальную концентрацию плазмы на экспериментальной установке "КРОТ"
+			\item Измерить зависимость локальной концентрации плазмы			от расстояния до центра генерации.
 
-			\item Изучить временную зависимость концентрации для распадающейся плазмы  
+			\item Изучить временную зависимость концентрации для распадающейся плазмы.
 
 		\end{enumerate}
 		\vfill
 \end{frame}
 \subsection{Актуальность работы}
 \begin{frame}[t]
+
 	
 	\frametitle{Актуальность работы}
-		
+		\vfill
 		\begin{enumerate}
-			\item Моделирование космических явлений
-			\item Моделирование процессов в ионосфере
-			\item Идея управляемого термоядерного синтеза
-			\item МГД-преобразование энергии и ионные двигатели
-			\item Газовые лазеры
-			\item Газоразрядные электронные приборы 
+			\item Изучение космического окружения Земли. Например, изучение ионосферы.
+			\item Современная астрофизика. Например, для предсказания хода эволюции галактик применялась кинетическая теория плазмы.
+			% \item Идея управляемого термоядерного синтеза
+			\item МГД-преобразование энергии и ионные двигатели.
+			\item Накачка газового лазера газовым разрядом.
+			\item Газоразрядные электронные приборы.
 		\end{enumerate}
 
 
@@ -56,34 +59,70 @@
 
 \section{Краткая теория}
 \subsection{Некоторые свойства плазмы}
-\begin{frame}
-	\frametitle{Некоторые свойства плазмы}
-	\textbf{Плазма} -- частично или полностью ионизированный газ, образованный из нейтральных атомов (или молекул) и заряженных частиц.
+% \begin{frame}
+% 	\frametitle{Некоторые свойства плазмы}
+% 	\textbf{Плазма} -- частично или полностью ионизированный газ, образованный из нейтральных атомов (или молекул) и заряженных частиц.
 
-	$\,$
-	\begin{enumerate}
-		\item Квазинейтральный газ
-		\item Экранирует действующие на неё на неё электрические поля
-		\item Высокая проводимость
-		\item 
-	\end{enumerate}
-	Плазма является электрически нейтральной системой.
-\end{frame}
+% 	$\,$
+% 	\begin{enumerate}
+% 		\item Квазинейтральный газ
+% 		\item Экранирует действующие на неё на неё электрические поля
+% 		\item Высокая проводимость
+% 		% \item 
+% 	\end{enumerate}
+% 	Плазма является электрически нейтральной системой.
+% \end{frame}
 
 \begin{frame}[t]\frametitle{Радиус Дебая}
+\begin{minipage}[0.5\textheight]{\textwidth}
+	\vspace{0.5cm}
+	\begin{columns}[T]
+
+		\begin{column}{0.4\textwidth}
+			\begin{figure}[tb]
+				\vspace{0pt}
+				\centering
+				\includegraphics[width=\textwidth]{fig/debai}
+				\label{fig:debai}
+				\vspace{-20pt}
+
+				\caption*{Дебаевское экранирование}
+
+			\end{figure}
+		\end{column}
+
+
+		\begin{column}{0.6\textwidth}
+			Предположим, что мы попытались создать электрическое поле внутри плазмы, поместив в неё два шарика, соединив их батарейкой. Рассмотрим пространство вокруг положительно заряженного  шарика.
+
+			Электрическое поле $\vec{E}$ и плотность электрического заряда $\rho$ связаны соотношением:
+
+		\end{column}
+	\end{columns}
+\end{minipage}
+
 \begin{equation}
-	\Delta\phi= -4\pi\rho,
+	\div{\vec{E}}=4\pi \rho
 \end{equation}
-$\Delta$-- оператор Лапласа
-Распределение электронов,
-а значит, и их пространственного заряда
+\begin{equation}
+	\Delta\phi= -4\pi\rho,\, \Delta \text{-- оператор Лапласа}
+\end{equation}
+
+	Распределение электронов,
+	а значит, и их пространственного заряда
 $\rho_e$ описывается формулой Больцмана:
 \begin{equation}
-	\rho_e= -ne\cdot e^{e\phi/kT_e}.
+	\rho_e= Ne\cdot \exp{-\frac{e\phi}{kT_e}}.
 \end{equation}
-\begin{equation}
+
+
+
+\end{frame}
+\begin{frame}[t]\frametitle{Радиус Дебая (продолжение)}
+	\begin{equation}
 	\label{eq:1}
-	\dv[2]{\phi}{t}+\frac2r\dv{\phi}{r}=-4\pi Ne\left[1 -e^{e\phi/kT_e}\right]
+	\dv[2]{\phi}{t}+\frac2r\dv{\phi}{r}=-4\pi Ne\left[1 -
+	\exp{-\frac{e\phi}{kT_e}}\right]
 \end{equation}
 При $\displaystyle \frac{e\phi}{kT_e}\ll1$ можем разложить экспоненту в ряд и (\ref{eq:1}) станет линейным:
 \begin{equation}
@@ -91,10 +130,6 @@ $\rho_e$ описывается формулой Больцмана:
 	\dv[2]{\phi}{t}+\frac2r\dv{\phi}{r}=\frac{1}{r_D^2}\phi,
 \end{equation}
 где $\displaystyle r_D^2=\frac{kT_e}{4\pi Ne^2}$.
-
-Тогда, решение (\ref{eq:2}) имеет вид $\displaystyle \phi=\frac{A_0}{r}\cdot e^{-r/r_D}$
-\end{frame}
-\begin{frame}[t]\frametitle{Радиус Дебая (продолжение)}
 	Тогда, решение (\ref{eq:2}) имеет вид 
 	\begin{equation}
 		\label{eq:3}
@@ -102,37 +137,126 @@ $\rho_e$ описывается формулой Больцмана:
 	\end{equation}  
     Решение уравнения (\ref{eq:3}) показывает, что поле иона убывает с расстоянием экспоненциально с характерной длиной, равной $r_D$ -- дебаевскому радиусу экранирования. 
 
-    $$\,$$
-
-    Плазму можно считать нейтральной (квазинейтральной) в областях, размеры которых существенно превосходят дебаевскую длину.
+    \vfill
+    Плазму можно считать  \textbf{квазинейтральной} в областях, размеры которых существенно превосходят дебаевскую длину.
 \end{frame}
 \begin{frame}[t]\frametitle{Плазменная частота}
+\begin{minipage}[0.2\textheight]{\textwidth}
+	\begin{columns}[T]
+%Без учета магнитного поля
+		\begin{column}{0.4\textwidth}
+			\begin{figure}[tr]
+				\vspace{0pt}
+				\centering
+				\includegraphics[]{fig/plasmfreq}
+				\vspace{-10pt}
+				\label{fig:plasmfreq}
+				\caption*{Объем, занимаемый ионами обозначен сплошной линией, а электронами -- пунктирной.}
+			\end{figure}
+		\end{column}
+
+
+		\begin{column}{0.6\textwidth}
+			Сместим все электроны на $x$ относительно ионов. Тогда на гранях выделенного нами параллелепипеда возникнут поверхностные заряды:
+			\begin{equation}
+			\sigma = Nex,
+			\end{equation}
+			где $N$-- концентрация электронов
+			\begin{equation}
+				E=4\pi\sigma=4\pi Nex
+			\end{equation}
+			Это поле действует на электроны, придавая им ускорение, равное
+			\begin{equation}
+				\label{eq:4}
+				\dv[2]{x}{t}=\frac{eE}{m_e}=\frac{4\pi N e^2}{m_e}x
+			\end{equation}
+		\end{column}
+
+	\end{columns}
+\end{minipage}
+\vfill
+Уравнение (\ref{eq:4}) определяет плазменную частоту коллективных колебаний электронов:
 \begin{equation}
-	\sigma = Nex
-\end{equation}
-\begin{equation}
-	E=4\pi\sigma=4\pi Nex
-\end{equation}
-Это полей действует на электроны, придавая им ускорение, равное
-\begin{equation}
-	\label{eq:4}
-	\dv[2]{x}{t}=-\frac{eE}{m}=-\frac{4\pi N e^2}{m}x
-\end{equation}
-Уравнение (\ref{eq:4}) определяет плазменную частоты коллективных колебаний электронов:
-\begin{equation}
-	\omega_p=\sqrt{\frac{4\pi N e^2}{m}}
+	\omega_p=\sqrt{\frac{4\pi N e^2}{m_e}}
 \end{equation}
 
 
 
 \end{frame}
+\begin{frame}[t]\frametitle{Существующие методы диагностики плазмы}
+	\begin{columns}[t]
+		\begin{column}{0.5\textwidth}
+			{\centering\textbf{Контактные методы}
+			\begin{itemize}
+				\item Зонды Ленгмюра
+				\item Рамочные и электрические сбалансированные системы
+				\item Зонд с СВЧ-резонатором
+			\end{itemize}}
+			\bigbreak
+			\textit{Преимущества:}
 
+			Возможность локальных измерений
+
+			\bigbreak
+			\textit{Недостатки:}
+
+			Вносят возмущения в плазму
+
+		\end{column}
+
+		\begin{column}{0.5\textwidth}
+		 	{\centering \textbf{Бесконтактные методы}
+		 	\begin{itemize}
+		 		\item Интерферометр
+		 		\item Метод "резонансного конуса"
+		 	\end{itemize}}
+		 	\bigbreak
+		 	\textit{Преимущества:}
+
+			Измерения не влияют на измеряемые величины
+
+			\bigbreak
+			\textit{Недостатки:}
+
+			Невозможность локальных измерений
+		\end{column}
+
+
+
+	\end{columns}
+	    
+
+
+\end{frame}
 
 \subsection{Зонд с СВЧ-резонатором} % (fold)
 
 \begin{frame}
 	\frametitle{Зонд с СВЧ-резонатором}
 	Идея метода замера локальной  плотности плазмы заключается в измерении собственной частоты резонатора, помещенного в неё.
+
+
+
+	В нашем случае резонатором является четвертьволновый отрезок двупроводной линии (четвертьволновый резонатор), замкнутый на одном конце и разомкнутый на другом. 
+	\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.8\linewidth]{fig/resonator}
+			\vspace{-20pt}
+			\caption*{\centeringЧетвертьволновый резонатор
+
+			% \alert
+			{1- двупроводная линия 2- передающая линия 3- принимающая линия}}
+
+			\label{fig:resonator}
+	\end{figure}
+	
+
+\end{frame}
+
+
+
+\begin{frame}
+	\frametitle{Зонд с СВЧ-резонатором}
 
 	\begin{equation}
 		\omega_{res}=\left(\frac\pi{2l}\right)\frac c{\sqrt{\varepsilon}},
@@ -142,7 +266,7 @@ $\rho_e$ описывается формулой Больцмана:
 	В плазме: $$\varepsilon=\varepsilon(\omega)=1-\frac{\omega^2}{\omega_p^2}.$$ 
 	Тогда сдвиг резонансной частоты по сравнению с вакуумом:
 	$$\omega_{res}^2=\omega_{0res}^2+\omega_p^2,$$ 
-	где $\omega_{0res}$-- собственная частота резонатора в вакууме,а $\omega_p$-- плазменная частота
+	где $\omega_{0res}$-- собственная частота резонатора в вакууме, а $\omega_p$-- плазменная частота
 
 	При этом концентрация однозначно связана с плазменной частотой:
 	\begin{equation}
@@ -154,39 +278,51 @@ $\rho_e$ описывается формулой Больцмана:
 
 \begin{frame}
 	\frametitle{Зонд с СВЧ-резонатором}
-	В нашем случае резонатором является четвертьволновый отрезок двупроводной линии (четвертьволновый резонатор), замкнутый на одном конце и разомкнутый на другом. 
-	\begin{figure}[H]
-	\begin{minipage}{0.49\linewidth}
-			\centering
-			\includegraphics[width=\linewidth]{fig/resonator}
-			\caption{Четвертьволновый резонатор}
-			\label{fig:resonator}
+	\begin{minipage}[]{0.49\textwidth}
+		\begin{figure}[H]
+				\centering
+				\includegraphics[width=\linewidth]{fig/resonator}
+				\caption*{СВЧ-резонатор}
+				\label{fig:chem1}
+		\end{figure}
 	\end{minipage}
-	\begin{minipage}{0.49\linewidth}		
-			\centering
-			\includegraphics[]{chem/chem1}
-			\caption{Эквивалентная съема резонатора}
-			\label{fig:chem1}
+	\begin{minipage}[]{0.49\textwidth}
+		\begin{figure}[H]
+				\centering
+				\includegraphics[width=\linewidth]{chem/chem1}
+				\caption*{Эквивалентная схема резонатора
+				\newline 1- двупроводная линия 
+				\newline 2- передающая линия 
+				\newline 3- принимающая линия}
+				\label{fig:chem1}
+		\end{figure}
 	\end{minipage}
-	\end{figure}
+
+
 \end{frame}
 
-% \begin{frame}
-% 	\frametitle{Преимущества зонда с СВЧ-резонатором}
-% 	\begin{enumerate}
-% 		\item Благодаря малым размерам резонатора, позволяет определять локальное, слабо возмущенное значение концентрации плазмы.
-% 		\item Результаты измерений не зависят от температуры плазмы.
-% 	\end{enumerate}
-% \end{frame}
-\begin{frame}[t]\frametitle{Нелинейные свойства СВЧ-резонатора}
+\begin{frame}
+	\frametitle{Недостатки зонда с СВЧ-резонатором}
+	\begin{enumerate}
+		\item Контактный метод измерения приводит к возмущению некоторой области около зонда. Характерный размер такой области определяется дебаевским радиусом экранирования и, как правило, оказывается существенно меньше размеров плазменного объема.
+		\item Нелинейные свойства и гистерезисные явления. При сильных СВЧ-полях плазма вытесняется из области между проводами резонатора.
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Преимущества зонда с СВЧ-резонатором}
+	\begin{enumerate}
+		\item Позволяет определять локальное, слабовозмущенное значение плотности плазмы. 
+		\item В сравнении с ленгмюровскими зондами, результаты измерений с помощью зонда с СВЧ-резонатором не зависят (в допустимых пределах) от электронной температуры плазмы. %узнать как ленгмюровскими мерить плотность
+
+	\end{enumerate}
+\end{frame}
+% \begin{frame}[t]\frametitle{Нелинейные свойства СВЧ-резонатора}
     
 
 
-\end{frame}
+% \end{frame}
 \subsection{Генерация плазмы}
-\begin{frame}
-	\frametitle{Генерация плазмы в КРОТе}
-\end{frame}
 \section{Эксперимент}
 \subsection{Описание экспериментальной установки}
 \begin{frame}
@@ -205,25 +341,61 @@ $\rho_e$ описывается формулой Больцмана:
 		\centering
 		\includegraphics[width=0.6\linewidth]{fig/krot}
 		\label{fig:krot}
-		\caption{1 - вакуумная откачка, 2 - зонд с СВЧ-резонатором,3 - ВЧ-генератор, 4 - соленоид с источником магнитного поля.}
+		\caption*{\centering 1 - вакуумная откачка, 2 - зонд с СВЧ-резонатором,3 - ВЧ-генератор, 4 - соленоид с источником магнитного поля, 5 - напуск рабочего газа.}
 	\end{figure}
+
+\end{frame}
+
+\begin{frame}[t]\frametitle{Экспериментальная установка КРОТ}
+
+\begin{figure}[H]
+	\centering
+	\vspace{-5pt}
+	\includegraphics[width=\linewidth]{fig/krotphoto}
+	\caption{}
+	\label{fig:krot_photo}
+\end{figure}
+
+
+
+\end{frame}
+\begin{frame}
+	\frametitle{Генерация плазмы в КРОТе}
+
+		Для генерации плазмы используется индукционный газовый разряд, осуществляемый при помощи высокочастотных вихревых электрических
+	полей, создаваемых катушками индуктивности, расположенными внутри установки.
+
+	Диаметр витков: $R_1=0.4$ м $R_2=1.2$ м
+
+	\begin{figure}[H]
+		\begin{minipage}{\linewidth}
+				\centering
+				\includegraphics[width=0.6\linewidth]{fig/induct}
+				\vspace{-25pt}
+				\caption*{Индукторы для генерации плазмы}
+
+				\label{fig:resonator}
+		\end{minipage}
+		\end{figure}
 \end{frame}
 \section{Практическая часть} % (fold)
-\subsection{Измерение концентрации плазмы}
-\begin{frame}
-	\frametitle{Измерение концентрации плазмы}
-	Рабочий газ -- аргон (Ag), 
-	$P=4\cdot10^{-1}$ Торр. 
-	\begin{figure}[tb]
-		\vspace{-5pt}
-		\centering
-		\includegraphics[width=0.89\linewidth]{fig/concentration}
-		\label{fig:1}
-	\end{figure}
-\end{frame}
+% \subsection{Измерение концентрации плазмы}
+% \begin{frame}
+% 	\frametitle{Измерение концентрации плазмы}
+% 	Рабочий газ -- аргон (Ag), 
+% 	$P=4\cdot10^{-4}$ Торр. 
+% 	\begin{figure}[tb]
+% 		\vspace{-5pt}
+% 		\centering
+% 		\includegraphics[width=0.89\linewidth]{fig/concentration}
+% 		\label{fig:1}
+% 	\end{figure}
+% \end{frame}
 \subsection{Распад  плазмы}
 \begin{frame}
 	\frametitle{Распад плазмы}
+	Из графика определили характерное время распада $\tau_N=4.4$ мс.
+
 	\begin{figure}[tb]
 		\centering
 		\includegraphics[width=0.9\linewidth]{fig/decay}
@@ -247,12 +419,11 @@ $\rho_e$ описывается формулой Больцмана:
 		\vfill
 		\frametitle{Выводы}
 		\begin{enumerate}
-			\item Мы изучили принцип работы зонда с СВЧ-резонатором
+			\item Был изучен принцип работы зонда с СВЧ-резонатором
+			
 
-			\item Измерили локальную концентрацию плазмы на экспериментальной установке "КРОТ"
-
-			\item Изучили временную зависимость концентрации для распадающейся плазмы  
-
+			\item Была измерена зависимость локальной концентрации плазмы от расстояния до центра генерации
+			\item Была изучена временная зависимость концентрации распадающейся плазмы
 		\end{enumerate}
 		\vfill
 \end{frame}
