@@ -3,7 +3,7 @@
 \renewcommand{\phi}{\varphi}
 \renewcommand{\epsilon}{\varepsilon}
 \renewcommand{\div}{\operatorname{div}}
-\title[Измерение плотности плазмы]{Измерение плотности плазмына  экспериментальном стенде КРОТ зондом с СВЧ-резонатором}
+\title[Измерение плотности плазмы]{Измерение плотности плазмы на  экспериментальном стенде КРОТ зондом с СВЧ-резонатором}
 
 \author{%
 	Виноградов И.Д. %
@@ -29,7 +29,6 @@
 	% \textbf{Цели}\\
 		\vfill
 		\begin{enumerate}
-			\item \sout{Получить зачёт по УНЭ.}
 			\item Изучить принцип работы зонда с СВЧ-резонатором.
 
 			\item Измерить зависимость локальной концентрации плазмы			от расстояния до центра генерации.
@@ -86,7 +85,7 @@
 				\label{fig:debai}
 				\vspace{-20pt}
 
-				\caption{Дебаевское экранирование}
+				\caption*{Дебаевское экранирование}
 
 			\end{figure}
 		\end{column}
@@ -108,10 +107,8 @@
 	\Delta\phi= -4\pi\rho,\, \Delta \text{-- оператор Лапласа}
 \end{equation}
 
-
-Распределение электронов,
-а значит, и их пространственного заряда
-
+	Распределение электронов,
+	а значит, и их пространственного заряда
 $\rho_e$ описывается формулой Больцмана:
 \begin{equation}
 	\rho_e= Ne\cdot \exp{-e\phi/kT_e}.
@@ -150,9 +147,9 @@ $\rho_e$ описывается формулой Больцмана:
 				\vspace{0pt}
 				\centering
 				\includegraphics[]{fig/plasmfreq}
-				\vspace{-15pt}
+				\vspace{-10pt}
 				\label{fig:plasmfreq}
-				\caption{Объем, занимаемый ионами обозначен сплошной линией, а электронами -- пунктирной.}
+				\caption*{Объем, занимаемый ионами обозначен сплошной линией, а электронами -- пунктирной.}
 			\end{figure}
 		\end{column}
 
@@ -192,6 +189,23 @@ $\rho_e$ описывается формулой Больцмана:
 	\frametitle{Зонд с СВЧ-резонатором}
 	Идея метода замера локальной  плотности плазмы заключается в измерении собственной частоты резонатора, помещенного в неё.
 
+
+
+	В нашем случае резонатором является четвертьволновый отрезок двупроводной линии (четвертьволновый резонатор), замкнутый на одном конце и разомкнутый на другом. 
+	\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.8\linewidth]{fig/resonator}
+			\caption*{Четвертьволновый резонатор\alert{(1-? 2-? 3-?)}}
+			\label{fig:resonator}
+	\end{figure}
+	
+
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Зонд с СВЧ-резонатором}
+
 	\begin{equation}
 		\omega_{res}=\left(\frac\pi{2l}\right)\frac c{\sqrt{\varepsilon}},
 	\end{equation}
@@ -212,20 +226,11 @@ $\rho_e$ описывается формулой Больцмана:
 
 \begin{frame}
 	\frametitle{Зонд с СВЧ-резонатором}
-	В нашем случае резонатором является четвертьволновый отрезок двупроводной линии (четвертьволновый резонатор), замкнутый на одном конце и разомкнутый на другом. 
 	\begin{figure}[H]
-	\begin{minipage}{0.49\linewidth}
 			\centering
-			\includegraphics[width=\linewidth]{fig/resonator}
-			\caption{Четвертьволновый резонатор}
-			\label{fig:resonator}
-	\end{minipage}
-	\begin{minipage}{0.49\linewidth}		
-			\centering
-			\includegraphics[]{chem/chem1}
-			\caption{Эквивалентная съема резонатора}
+			\includegraphics[width=.65\linewidth]{chem/chem1}
+			\caption*{Эквивалентная схема резонатора}
 			\label{fig:chem1}
-	\end{minipage}
 	\end{figure}
 \end{frame}
 
@@ -269,7 +274,7 @@ $\rho_e$ описывается формулой Больцмана:
 		\centering
 		\includegraphics[width=0.6\linewidth]{fig/krot}
 		\label{fig:krot}
-		\caption{1 - вакуумная откачка, 2 - зонд с СВЧ-резонатором,3 - ВЧ-генератор, 4 - соленоид с источником магнитного поля, 5 - напуск рабочего газа.}
+		\caption*{1 - вакуумная откачка, 2 - зонд с СВЧ-резонатором,3 - ВЧ-генератор, 4 - соленоид с источником магнитного поля, 5 - напуск рабочего газа.}
 	\end{figure}
 \end{frame}
 \begin{frame}
@@ -281,7 +286,7 @@ $\rho_e$ описывается формулой Больцмана:
 		\begin{minipage}{\linewidth}
 				\centering
 				\includegraphics[width=0.4\linewidth]{fig/induct}
-				\caption{Генерация ВЧ поля}
+				\caption*{Генерация ВЧ поля}
 				\label{fig:resonator}
 		\end{minipage}
 		\end{figure}

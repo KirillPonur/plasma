@@ -27,11 +27,13 @@
     backgrounds, %
     positioning%
 }
-
+\usepackage{
+	caption
+}
 
 % Стиль презентации
 
- \usetheme{Warsaw}
+ \usetheme{default}
  \usefonttheme{professionalfonts}
  \usecolortheme{}
  % \usecolortheme{whale}
@@ -47,33 +49,45 @@
 % \setbeamercolor{frametitle}{fg=white,bg=Brown!85}
 %\setbeamercolor{frametitle right}{fg=white,bg=black!85} %
 \setbeamercolor{frametitle}{fg=white,bg=black!85} % Цвет титульника
-
+\setbeamertemplate{blocks}[rounded][shadow=false] %стиль блоков
 \setbeamertemplate{headline}{}
-\setbeamertemplate{footline}{}
+\setbeamertemplate{footline}{} 
+\setbeamertemplate{navigation symbols}{} % минус навигация
 \let\Tiny=\tiny % решает проблему со шрифтами в TexLive
-\setbeamertemplate
-	{footline}{
-		\color{black!40!white}
-		\quad\hfill
-		\insertframenumber/\inserttotalframenumber
-		\hfill\vspace{1cm}\quad
-	} 
+%\setbeamertemplate
+%	{footline}{
+%		\color{black!40!white}
+%		\quad\hfill
+%		\insertframenumber/\inserttotalframenumber
+%		\hfill\vspace{1cm}\quad
+%	} 
 
-\setbeamertemplate{navigation symbols}{}
 
 \beamersetrightmargin{1cm} 
 \beamersetleftmargin{1cm}
 
 \setbeamertemplate{enumerate item}{
 	\usebeamercolor[bg]{item projected}
-	\raisebox{1pt}{\colorbox{bg}{\color{fg}\footnotesize\bf\insertenumlabel}}%
+	\raisebox{1pt}{\colorbox{bg}{\color{fg}\footnotesize\insertenumlabel}}%
 }
-\setbeamercolor{item projected}{bg=black,fg=white}
-
 
 \setbeamertemplate{itemize item}{%
 	\usebeamercolor[bg]{item projected}%
 	\raisebox{1pt}{{\color{bg}\footnotesize$\bf\square$}}%
 }
+
 \setbeamercolor{item projected}{bg=black,fg=white}
-\setbeamercolor{title}{bg=black,fg=white}
+\setbeamercolor{title}{bg=black!85,fg=white}
+
+\setbeamertemplate{frametitle}
+{	
+	\nointerlineskip
+	\begin{beamercolorbox}[sep=0.3cm,ht=1.9em,wd=\paperwidth]{frametitle}
+		\vbox{}\vskip-2ex%
+		\strut\insertframetitle\strut
+		\vskip-0.8ex%	
+	\end{beamercolorbox}
+}
+\setbeamertemplate{title}{
+	\inserttitle
+}
