@@ -50,6 +50,7 @@
 \setbeamercolor{frametitle}{fg=white,bg=black!85} % Цвет титульника
 \setbeamercolor{item projected}{fg=white,bg=black!85} % Цвет титульника
 \setbeamertemplate{blocks}[rounded][shadow=false] %стиль блоков
+\setbeamertemplate{itemize item}{\color{black!85}$\bullet$}
 \setbeamertemplate{headline}{}
 \setbeamertemplate{footline}{} 
 \setbeamertemplate{navigation symbols}{} % минус навигация
@@ -71,10 +72,10 @@
 	\raisebox{1pt}{\colorbox{black!85}{\color{fg}\footnotesize\insertenumlabel}}%
 }
 
-\setbeamertemplate{itemize item}{%
-	\usebeamercolor[bg]{item projected}%
-	\raisebox{1pt}{{\color{bg}\footnotesize$\bf\square$}}%
-}
+% \setbeamertemplate{itemize item}{%
+% 	\usebeamercolor[bg]{item projected}%
+% 	\raisebox{3pt}{{\colorbox{black!85}\footnotesize$\bf$\bullet}}%
+% }
 
 \setbeamercolor{item projected}{bg=black,fg=white}
 \setbeamercolor{title}{bg=black!85,fg=white}
