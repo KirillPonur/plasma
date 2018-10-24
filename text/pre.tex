@@ -49,6 +49,7 @@
 % \setbeamercolor{frametitle}{fg=white,bg=Brown!85}
 %\setbeamercolor{frametitle right}{fg=white,bg=black!85} %
 \setbeamercolor{frametitle}{fg=white,bg=black!85} % Цвет титульника
+\setbeamercolor{item projected}{fg=white,bg=black!85} % Цвет титульника
 \setbeamertemplate{blocks}[rounded][shadow=false] %стиль блоков
 \setbeamertemplate{headline}{}
 \setbeamertemplate{footline}{} 
@@ -68,7 +69,7 @@
 
 \setbeamertemplate{enumerate item}{
 	\usebeamercolor[bg]{item projected}
-	\raisebox{1pt}{\colorbox{bg}{\color{fg}\footnotesize\insertenumlabel}}%
+	\raisebox{1pt}{\colorbox{black!85}{\color{fg}\footnotesize\insertenumlabel}}%
 }
 
 \setbeamertemplate{itemize item}{%
@@ -87,7 +88,4 @@
 		\strut\insertframetitle\strut
 		\vskip-0.8ex%	
 	\end{beamercolorbox}
-}
-\setbeamertemplate{title}{
-	\inserttitle
 }
