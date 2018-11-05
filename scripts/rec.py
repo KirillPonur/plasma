@@ -53,23 +53,29 @@ print(t, N(omegap))
 
 
 def f(x):
-    N0 = 1.47*10**12
-    tau0 = 4.4
-    f = N0 * np.exp(-x/tau0)
+    # N0 = 1.47*10**12
+    # tau0 = 4.4
+    # f = N0 * np.exp(-x/tau0)
+
+    N01 = 8.16 * 10**11
+    tau01 = 1.072
+    N02 = 1.058 * 10**12
+    tau02 = 6.0277
+    f = N01 * np.exp(-x / tau01) + N02 * np.exp(-x / tau02)
     return f
 
 
 
-# x = np.linspace(0, t[0], 100)
-# plt.plot(x, f(x), 'darkblue')
-# plt.plot(t, N(omegap), 'or')
-# plt.xlabel(r't, $\text{мc}$', fontsize='16')
-# plt.ylabel(r'N, $1/\text{см}^{3}$', fontsize='16')
-# plt.minorticks_on()
-# plt.grid(which='major', linestyle='-')
-# plt.grid(which='minor', linestyle=':')
-# plt.savefig('D:/Labs/plasma/fig/decay.pdf')
-# plt.show()
+x = np.linspace(0, t[0], 100)
+plt.plot(x, f(x), 'darkblue')
+plt.plot(t, N(omegap), 'or')
+plt.xlabel(r't, $\text{мc}$', fontsize='16')
+plt.ylabel(r'N, $1/\text{см}^{3}$', fontsize='16')
+plt.minorticks_on()
+plt.grid(which='major', linestyle='-')
+plt.grid(which='minor', linestyle=':')
+plt.savefig('D:/Labs/plasma/fig/decay.pdf')
+plt.show()
 
 
 # # # # plt.subplot(212)
