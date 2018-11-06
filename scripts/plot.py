@@ -1,23 +1,27 @@
-
-
 import numpy as np
-
-from matplotlib import rc
-rc('text', usetex=True)
-rc('font', size=14)
-rc('legend', fontsize=13)
-rc('text.latex', preamble=r'\usepackage{cmbright}')
 import matplotlib.pyplot as plt
-from functions import parsing
-x, y = parsing('filters1.tsv', 0, 2)
+import matplotlib
 
-plt.plot(x, y)
-plt.title('PFC', fontsize=16)
-plt.ylabel('$I_a$,A', fontsize=16)
-plt.xlabel('$\\varphi_y$,V', fontsize=16)
-plt.grid()
-plt.plot(x, y, 'ko', markersize=2)
-plt.plot(x, y)
+# Example data
+t = np.arange(0.0, 1.0 + 0.01, 0.01)
+s = np.cos(4 * np.pi * t) + 2
+
+matplotlib.rcParams['text.usetex'] = True
+matplotlib.rcParams['text.latex.preamble'] = [r'\usepackage[utf8x]{inputenc}',
+                               r'\usepackage{amsmath}',
+                               r'\usepackage{amssymb}']
+plt.plot(t, s)
+
+plt.xlabel(r'\textbf{time} (s)')
+plt.ylabel(r'\textit{voltage} (mV)',fontsize=16)
+plt.title(r"\TeX\ is Number "
+          r"$\displaystyle\sum_{n=1}^\infty\frac{-e^{i\pi}}{2^n}$!",
+          fontsize=16, color='gray')
+# Make room for the ridiculously large title.
+plt.subplots_adjust(top=0.8)
+
+# plt.savefig('tex_demo')
+plt.show()
 # plt.xticks([i for i in range(0,10,1)]) # Х-сетка
 # plt.yticks([i for i in range(0,10,1)]) # Y-сетка
 
@@ -25,8 +29,7 @@ plt.plot(x, y)
 # plt.gca().xaxis.set_major_formatter(FuncFormatter(lambda x, _: int(x))) #???
 # plt.xlim([0,5]) # Пределы оси
 # plt.ylim([0,5]) #
-# plt.savefig('filters1.pdf')
-plt.show()
+
 
 # Надписи
 # plt.axvline(21.75,ymin=0, ymax=0.783,color='k', linestyle='--')

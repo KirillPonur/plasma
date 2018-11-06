@@ -10,9 +10,15 @@
         to [L=$L_1$]++(0,-2) coordinate(2)
         % to [L=$L_1$]++(0,-2) coordinate(3)
         to ++(2,0)
-        to [C=$C_1$]++(0,2)
+        to [C=$C_1$,name=epsilon]++(0,2)
         to (0);
-
+          \fill[fill=cyan!40]
+          ([yshift=-\pgflinewidth]epsilon.se) 
+            rectangle 
+          ([yshift=\pgflinewidth]epsilon.nw);   
+  
+        \node at (epsilon.center)  
+        {$\scriptstyle\varepsilon(\omega)$};
 
 
         \draw (-4,-1.1)

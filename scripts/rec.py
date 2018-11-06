@@ -1,24 +1,27 @@
-import matplotlib.pyplot as plt
+import matplotlib.pylab
+from matplotlib.pylab import *
+from matplotlib import rc
 from functions import parsing
 from math import pi
-import numpy as np
-plt.rc('text', usetex=True)
-plt.rc('text.latex', unicode=True)
-plt.rc('text.latex', preamble=[r'\usepackage[utf8x]{inputenc}',
-                               r'\usepackage[russian]{babel}',
-                               r'\usepackage{amsmath}',
-                               r'\usepackage{amssymb}'])
+import os.path as path
+import sys
+rc('text', usetex=True)
+rc('text.latex', preamble=[r'\usepackage[russian]{babel}',
+                           r'\usepackage{amsmath}',
+                           r'\usepackage{amssymb}'])
 
-plt.rc('font', family='serif')
+rc('font', family='serif')
 
-concentration = 'D:\\Labs\\plasma\\scripts\\concentration.txt'
-density = 'D:\\Labs\\plasma\\scripts\\density.txt'
+
+
+concentration = path.abspath('..'+'\\scripts\\concentration.txt')
+density = path.abspath('..'+'\\scripts\\density.txt')
 
 
 t, freq1 = parsing(concentration, 1, 0)
 r, freq2 = parsing(density, 1, 0)
-omegares = np.array(freq1 * 2 * pi * 10 ** 9)
-omegares1 = np.array(freq2 * 2 * pi * 10 ** 9)
+omegares = array(freq1 * 2 * pi * 10 ** 9)
+omegares1 = array(freq2 * 2 * pi * 10 ** 9)
 
 t = np.array(t)
 
@@ -61,21 +64,21 @@ def f(x):
     tau01 = 1.072
     N02 = 1.058 * 10**12
     tau02 = 6.0277
-    f = N01 * np.exp(-x / tau01) + N02 * np.exp(-x / tau02)
+    f = N01 * exp(-x / tau01) + N02 * exp(-x / tau02)
     return f
 
 
 
-x = np.linspace(0, t[0], 100)
-plt.plot(x, f(x), 'darkblue')
-plt.plot(t, N(omegap), 'or')
-plt.xlabel(r't, $\text{мc}$', fontsize='16')
-plt.ylabel(r'N, $1/\text{см}^{3}$', fontsize='16')
-plt.minorticks_on()
-plt.grid(which='major', linestyle='-')
-plt.grid(which='minor', linestyle=':')
-plt.savefig('D:/Labs/plasma/fig/decay.pdf')
-plt.show()
+x = linspace(0, t[0], 100)
+plot(x, f(x), 'darkblue')
+plot(t, N(omegap), 'or')
+xlabel(r't, $\text{мc}$', fontsize='16')
+ylabel(r'N, $1/\text{см}^{3}$', fontsize='16')
+minorticks_on()
+grid(which='major', linestyle='-')
+grid(which='minor', linestyle=':')
+# plt.savefig('D:/Labs/plasma/fig/decay.pdf')
+show()
 
 
 # # # # plt.subplot(212)
