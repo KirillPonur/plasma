@@ -3,25 +3,20 @@
 \renewcommand{\phi}{\varphi}
 \renewcommand{\epsilon}{\varepsilon}
 \renewcommand{\div}{\operatorname{div}}
+\begin{document}
 \title[Измерение плотности плазмы]{Измерение плотности плазмы на  экспериментальном стенде КРОТ зондом с СВЧ-резонатором}
 
 \author{%
 	Виноградов И.Д. %
-	Понур К.А. %
+	\underline{Понур К.А.} %
 	Шиков А.П. %
 }
 
-\institute{Радиофизический факультет ННГУ, 430 группа}
+\institute{Национальный исследовательский Нижегородский государственный университет имени Н. И. Лобачеевского, \\ Радиофизический факультет}
 
-\date{Нижний Новгород, 2018}
+\date{2018}
+\input{text/titlepage}
 
-\begin{document}  
-\begin{frame}
-\titlepage
-\end{frame}
-% \begin{frame}
-% \tableofcontents
-% \end{frame}
 \section{Введение}
 \subsection{Цели работы}
 \begin{frame}[t]
@@ -124,6 +119,7 @@ $\rho_e$ описывается формулой Больцмана:
 
 
 \end{frame}
+
 \begin{frame}[t]\frametitle{Радиус Дебая (продолжение)}
 	\begin{equation}
 	\label{eq:1}
@@ -363,8 +359,15 @@ $\rho_e$ описывается формулой Больцмана:
 \begin{figure}[H]
 	\centering
 	\vspace{-5pt}
-	\includegraphics[width=\linewidth]{fig/krotphoto}
-	\caption{}
+	\includegraphics[width=\linewidth]{fig/KROT.JPG}
+	\caption*{}
+	\label{fig:krot_photo}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\vspace{-5pt}
+	\includegraphics[width=\linewidth]{fig/KROT1.JPG}
+	\caption*{}
 	\label{fig:krot_photo}
 \end{figure}
 
@@ -405,26 +408,33 @@ $\rho_e$ описывается формулой Больцмана:
 % \end{frame}
 \subsection{Распад  плазмы}
 \begin{frame}
-	\frametitle{Распад плазмы}
-	Из графика определили характерные времена распада $\tau_{N_1}=1.07$ мс
-	и $\tau_{N_2}=6.02$ мс.
+	% \frametitle{Распад плазмы}
 
 	\begin{figure}[tb]
 		\centering
-		\includegraphics[width=0.9\linewidth]{fig/decay}
+		\vspace{-20pt}
+		\includegraphics[width=\linewidth]{fig/decay}
 		\label{fig:2}
+		\vspace{-20pt}
+		\caption{Зависимость концентрации плазмы от времени}
+		\vspace{-10pt}
 	\end{figure}
+	Характерные времена распада : $\tau_{N_1}=1.07$ мс и $\tau_{N_2}=6.02$ мс.
 \end{frame}
 
-\subsection{Зависимость на радиальной оси}
+\subsection{Зависимость концентрации на радиальной оси плазменного столба}
 \begin{frame}
-	\frametitle{Зависимость на радиальной оси}
-	Время после отключения ВЧ-генератора $t=4.13$ мс
+	% \frametitle{Зависимость концентрации на радиальной оси}
 	\begin{figure}[tb]
 		\centering
-		\includegraphics[width=0.9\linewidth]{fig/radial}
+		\vspace{-20pt}
+		\includegraphics[width=\linewidth]{fig/radial}
 		\label{fig:2}
+		\vspace{-15pt}
+		\caption{Зависимость концентрации на радиальной оси плазменного столба}
+		\vspace{-10pt}
 	\end{figure}
+	Время после отключения ВЧ-генератора $t=4.13$ мс
 \end{frame}
 
 \subsection{Выводы}

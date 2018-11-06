@@ -1,9 +1,10 @@
+%!TEX root = ../plasma.tex
 \usepackage[english,russian]{babel}
 % \usepackage[T2A,T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage{tikz}
+% \usepackage{tikz}
 \usepackage[unicode]{hyperref}
-\usepackage{pgfplots,standalone}
+% \usepackage{pgfplots,standalone}
 \usepackage{caption}
 \usepackage[normalem]{ulem}
 \usepackage
@@ -16,18 +17,18 @@
 		physics
 		}
 % \usepackage{lmodern}
-\pgfplotsset{compat=newest} 
-\usetikzlibrary{%
-    decorations.pathreplacing,%
-    decorations.pathmorphing,%
-    patterns,%
-    angles,%
-    quotes,%
-    calc, %
-    3d, %
-    backgrounds, %
-    positioning%
-}
+% \pgfplotsset{compat=newest} 
+% \usetikzlibrary{%
+%     decorations.pathreplacing,%
+%     decorations.pathmorphing,%
+%     patterns,%
+%     angles,%
+%     quotes,%
+%     calc, %
+%     3d, %
+%     backgrounds, %
+%     positioning%
+% }
 
 
 % Стиль презентации
@@ -54,7 +55,7 @@
 \setbeamertemplate{headline}{}
 \setbeamertemplate{footline}{} 
 \setbeamertemplate{navigation symbols}{} % минус навигация
-\let\Tiny=\tiny % решает проблему со шрифтами в TexLive
+% \let\Tiny=\tiny % решает проблему со шрифтами в TexLive
 %\setbeamertemplate
 %	{footline}{
 %		\color{black!40!white}
@@ -67,7 +68,8 @@
 \beamersetrightmargin{1cm} 
 \beamersetleftmargin{1cm}
 
-\setbeamertemplate{enumerate item}{
+\setbeamertemplate{enumerate item}
+{
 	\usebeamercolor[bg]{item projected}
 	\raisebox{1pt}{\colorbox{black!85}{\color{fg}\footnotesize\insertenumlabel}}%
 }
@@ -84,8 +86,9 @@
 {	
 	\nointerlineskip
 	\begin{beamercolorbox}[sep=15pt,ht=1.9em,wd=\paperwidth]{frametitle}
-		\vbox{}\vskip-15pt%
+		% \vspace{}%
 		\strut\insertframetitle\strut
-		\vskip-12pt%	
+		\vskip-1.8ex%	
 	\end{beamercolorbox}
 }
+

@@ -1,28 +1,27 @@
-\begin{titlepage}
+%!TEX root = ../plasma.tex
 
-\begin{center}
 
-{\small\textsc{Нижегородский государственный университет имени Н.\,И. Лобачевского}}
-\vskip 1pt \hrule \vskip 3pt
-{\small\textsc{Радиофизический факультет}}
 
-\vfill
+ 
+\begin{frame}[plain]
+	\begin{center}
+		\small{\insertinstitute}
+		\vspace{1cm}
+		
+		\begin{beamercolorbox}[sep=8pt,center]{title}
+			\usebeamerfont{title}\inserttitle
+		\end{beamercolorbox}
+		\vspace{0.5cm}
+	\end{center}
 
-{\Large Отчет по лабораторной работе №\labnumber\vskip 12pt\bfseries \labtheme}
-	
-\end{center}
-
-\vfill
-	
-\begin{flushright}
-	{Выполнили студенты \labgroup\ группы\\ \labauthors}%\vskip 12pt Принял:\\ Менсов С.\,Н.}
-\end{flushright}
-	
-\vfill
-	
-\begin{center}
-	Нижний Новгород, \the\year
-\end{center}
-
-\end{titlepage}
-
+	\begin{flushright}
+		\normalsize \textbf{Работу выполнили:}\\
+		\large
+		\insertauthor \\
+		\vspace{0.5cm}
+		\normalsize{\textbf{Научный руководитель:}\\}
+		\large{Стриковский А.В.}
+		\vfill
+	\end{flushright}
+	\centering{\small{\insertdate \, г.}}
+\end{frame}
